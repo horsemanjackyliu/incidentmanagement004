@@ -35,7 +35,7 @@
       "envFile": "${workspaceFolder}/env/.env2",
       "env": {
         "run.config": "{\"handlerId\":\"lcap_run_config_handler_id\",\"runnableId\":\"{\\\"projectPath\\\":\\\"/home/user/projects/incident_management004/\\\",\\\"profileName\\\":\\\"\\\"}\"}",
-        "runConfigurations": "{\"dbBinding\":{\"type\":\"SAP HANA Cloud\",\"dbName\":\"incident_management002-db\"}}"
+        "runConfigurations": "{}"
       }
     }
   ]

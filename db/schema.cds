@@ -44,6 +44,12 @@ entity Urgency : CodeList
     key code : UrgencyCode;
 }
 
+entity CMIS
+{
+    key foldid : String(20);
+    fileid : String(20);
+}
+
 type UrgencyCode : String enum
 {
     High = 'H';

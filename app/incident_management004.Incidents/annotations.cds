@@ -142,3 +142,39 @@ annotate service.Conversations with @(
             Label : 'message',
         },]
 );
+annotate service.Conversations with @(
+    UI.Facets : [
+        {
+            $Type : 'UI.ReferenceFacet',
+            Label : 'Conversations',
+            ID : 'Conversations',
+            Target : '@UI.FieldGroup#Conversations',
+        },
+    ],
+    UI.FieldGroup #Conversations : {
+        $Type : 'UI.FieldGroupType',
+        Data : [
+            {
+                $Type : 'UI.DataField',
+                Value : incidents.conversations.author,
+                Label : 'author',
+            },{
+                $Type : 'UI.DataField',
+                Value : incidents.conversations.ID,
+                Label : 'ID',
+            },{
+                $Type : 'UI.DataField',
+                Value : incidents.conversations.message,
+                Label : 'message',
+            },{
+                $Type : 'UI.DataField',
+                Value : incidents.conversations.timestamp,
+                Label : 'timestamp',
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : image,
+                Label : 'image',
+            },],
+    }
+);

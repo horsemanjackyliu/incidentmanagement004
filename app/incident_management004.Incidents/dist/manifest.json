@@ -97,28 +97,16 @@
       "css": []
     },
     "routing": {
-      "config": {
-        "flexibleColumnLayout": {
-          "defaultTwoColumnLayoutType": "TwoColumnsBeginExpanded",
-          "defaultThreeColumnLayoutType": "ThreeColumnsMidExpanded"
-        },
-        "routerClass": "sap.f.routing.Router"
-      },
       "routes": [
         {
           "pattern": ":?query:",
           "name": "IncidentsList",
-          "target": [
-            "IncidentsList"
-          ]
+          "target": "IncidentsList"
         },
         {
           "pattern": "Incidents({key}):?query:",
           "name": "IncidentsObjectPage",
-          "target": [
-            "IncidentsList",
-            "IncidentsObjectPage"
-          ]
+          "target": "IncidentsObjectPage"
         }
       ],
       "targets": {
@@ -140,15 +128,17 @@
               "controlConfiguration": {
                 "@com.sap.vocabularies.UI.v1.LineItem": {
                   "tableSettings": {
-                    "type": "ResponsiveTable"
+                    "type": "ResponsiveTable",
+                    "condensedTableLayout": true,
+                    "personalization": {
+                      "column": true
+                    }
                   }
                 }
               },
               "initialLoad": "Enabled"
             }
-          },
-          "controlAggregation": "beginColumnPages",
-          "contextPattern": ""
+          }
         },
         "IncidentsObjectPage": {
           "type": "Component",
@@ -157,19 +147,18 @@
           "options": {
             "settings": {
               "editableHeaderContent": false,
-              "contextPath": "/Incidents"
+              "contextPath": "/Incidents",
+              "navigation": {}
             }
-          },
-          "controlAggregation": "midColumnPages",
-          "contextPattern": "/Incidents({key})"
+          }
         }
-      }
+      },
+      "config": {}
     },
-    "rootView": {
-      "viewName": "sap.fe.templates.RootContainer.view.Fcl",
-      "type": "XML",
-      "async": true,
-      "id": "appRootView"
+    "extends": {
+      "extensions": {
+        "sap.ui.controllerExtensions": {}
+      }
     }
   },
   "sap.fiori": {
